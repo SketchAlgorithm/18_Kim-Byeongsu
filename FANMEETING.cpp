@@ -4,7 +4,7 @@
 
 using namespace std;
 
-bool NAND(vector<char>& member, vector<char>& fan, const int& index);
+bool NOR(vector<char>& member, vector<char>& fan, const int& index);
 
 int main(void)
 {
@@ -40,7 +40,7 @@ int main(void)
 		while (true)
 		{
 			// 모든 멤버들이 포옹을 하는 경우
-			if (NAND(member, fan, start++))
+			if (NOR(member, fan, start++))
 				answer[i]++;
 				
 			if (start + str1.size() > str2.size())
@@ -54,13 +54,13 @@ int main(void)
 	return 0;
 }
 
-bool NAND(vector<char>& member, vector<char>& fan, const int& index)
+bool NOR(vector<char>& member, vector<char>& fan, const int& index)
 {
 	int ret = 0;
 
 	for (int i = 0; i < member.size(); i++)
 	{
-		// NAND 연산 수행 -> member 와 fan 모두 남자인 경우, 즉 모두 0 인 경우에만 1 이 더해진다.
+		// NOR 연산 수행 -> member 와 fan 모두 남자인 경우, 즉 모두 0 인 경우에만 1 이 더해진다.
 		ret += !(member[i] | fan[i + index]);
 	}
 
