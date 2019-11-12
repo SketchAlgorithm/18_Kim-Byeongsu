@@ -19,7 +19,7 @@ int main(void)
 
 		vector<char> member(str1.size());		// 멤버들을 저장할 벡터
 		vector<char> fan(str2.size());			// 팬들을 저장할 벡터
-								// 남자는 0, 여자는 1으로 저장 -> NAND 연산을 위함
+								// 남자는 0, 여자는 1으로 저장 -> NOR 연산을 위함
 
 		for (int n = 0; n < str1.size(); n++)
 		{
